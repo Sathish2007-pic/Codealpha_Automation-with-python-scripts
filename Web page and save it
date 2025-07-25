@@ -1,0 +1,17 @@
+import requests
+import re
+
+url = 'https://example.com'  # Replace with the target URL
+output_file = 'title.txt'
+
+response = requests.get(url)
+
+# Use regex to extract the <title> tag
+match = re.search(r'<title>(.*?)</title>', response.text, re.IGNORECASE)
+if match:
+    title = match.group(1)
+    with open(output_file, 'w') as f:
+        f.write(title)
+    print(f'Page title saved: {title}')
+else:
+    print('No title found.')
