@@ -9,7 +9,7 @@ destination_folder = 'path/to/destination/folder'
 os.makedirs(destination_folder, exist_ok=True)
 
 # Move .jpg files
-for filename in os.listdir(source_folder):
+for filename in os.listdir(source_folder): 
     if filename.lower().endswith('.jpg'):
         src_path = os.path.join(source_folder, filename)
         dest_path = os.path.join(destination_folder, filename)
